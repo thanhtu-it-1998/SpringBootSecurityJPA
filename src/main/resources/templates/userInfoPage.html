@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User Info</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+	crossorigin="anonymous">
+</head>
+<body>
+	<!-- Include _menu.html -->
+	<th:block th:include="/_menu"></th:block>
+
+
+	<h2>User Info Page</h2>
+	<h3>
+		Welcome : <span th:utext="${#request.userPrincipal.name}"></span>
+	</h3>
+	<b>This is protected page!</b>
+
+	<br />
+	<br />
+
+	<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+
+</body>
+
+</html>
